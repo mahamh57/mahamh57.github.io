@@ -1,0 +1,128 @@
+/*https://www.youtube.com/watch?v=HpOi_tSMAoY <-- glitch text source*/
+/*https://www.webfx.com/blog/web-design/ghost-buttons/ <-- ghost button source*/
+
+
+body{
+  margin: 0;
+  padding: 0;
+  font-family: "montserrat",sans-serif;
+}
+
+.middle{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.text{
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 60px;
+  text-align: center;
+  letter-spacing: 14px;
+}
+
+.text::before,.text::after{
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.text::before{
+  color: #ff00c1;
+  animation: glitch-effect 3s infinite;
+}
+
+.text::after{
+  color: #3498db;
+  animation: glitch-effect 2s infinite;
+}
+
+@keyframes glitch-effect {
+  0%{
+    left: -5px;
+    top: -5px;
+  }
+  25%{
+    left: 2px;
+    top: 0px;
+  }
+  50%{
+    left: -1px;
+    top: 2px;
+  }
+  75%{
+    left: 1px;
+    top: -1px;
+  }
+  100%{
+    left: 0px;
+    top: -2px;
+  }
+    
+}
+
+
+ .fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 30px;
+    text-align: left;
+    text-decoration: none;
+    margin: 3px 1px;
+    border-radius: 50%;
+}
+
+
+.fa:hover {
+    opacity: 0.6;
+}
+
+.fa-twitter {
+    color: white;
+    position: relative;
+}
+
+.fa-linkedin {
+    color: white;
+    position: relative;
+}
+
+.fa-github {
+    color: white;
+    position: relative;
+}
+
+.fa-envelope{
+    color: white;
+    position: relative;
+}
+
+
+.ghost-button-semi-transparent {
+    display: inline-block;
+    width: 400px;
+    padding: 8px;
+    color: #fff;
+    border: 2px solid #fff;
+    text-align: center;
+    outline: none;
+    text-decoration: none;
+    transition: background-color 0.2s ease-out,border-color 0.2s ease-out;font-size: 20px;
+
+}
+
+.ghost-button-semi-transparent:hover,
+.ghost-button-semi-transparent:active {
+    background-color: #fff; /* fallback */
+    background-color: rgba(255, 255, 255, 0.4);
+    border-color: #fff; /* fallback */
+    border-color: rgba(255, 255, 255, 0.4);
+    transition: background-color 0.3s ease-in,border-color 0.3s ease-in;
+}
+
